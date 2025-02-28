@@ -12,7 +12,7 @@ export default function app() {
               pedantically as possible, preferably starting your response with
               the phrase "um, actually..."`,
 	})
-
+	const [flipped, setFlipped] = React.useState(false)
 /* Challenge: 
 
     The flashcard needs to flip back and forth. Your task is to set this up as follows: 
@@ -27,6 +27,12 @@ export default function app() {
            continue flipping the card back and forth as many times as they want. 
 */
 
+
+	const handeClick = () => {
+		setFlipped(prevState => !prevState)
+
+	}
+ 
 	return (
 		<div>
 			<header>
@@ -36,7 +42,7 @@ export default function app() {
 
 			{/*-------Edit the div below!------------*/}
 
-			<div className="flash-card">
+			<div className={flipped? "flash-card flipped":"flash-card"} onClick={handeClick} >
 			
             {/*-------Edit the div above!------------*/}
 
